@@ -1,4 +1,8 @@
 Dataeng::Application.routes.draw do
+  
+  post '/import', to: "application#import", as: :import
+
+  root to: 'application#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
