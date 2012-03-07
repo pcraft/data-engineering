@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
         rec.purchaser_name = record[0]
         rec.item_description = record[1]
         rec.item_price = record[2].to_f
-        rec.purchase_count = record[3]
+        rec.purchase_count = record[3].to_i
         rec.merchant_address = record[4]
         rec.merchant_name = record[5]
         rec.profit = rec.purchase_count * rec.item_price
@@ -29,6 +29,8 @@ class ApplicationController < ActionController::Base
       }
 
       redirect_to :root, notice: "Well done!"
+    else
+      redirect_to :root, notice: "Please attach a file"
     end
   end
 
